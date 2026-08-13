@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Manisha 🎂</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           FIRST PAGE
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top, #ff8fcf, transparent 35%),
+                linear-gradient(135deg, #22002d, #65004d, #18001f);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .gift {
+            width: 180px;
+            height: 140px;
+            background: #ff3f9e;
+            margin: 40px auto;
+            position: relative;
+            border-radius: 10px;
+
+            animation: floating 2s infinite ease-in-out;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.4),
+                0 0 40px rgba(255,60,170,.6);
+        }
+
+        .gift::before {
+            content: "";
+            position: absolute;
+
+            width: 35px;
+            height: 140px;
+
+            background: #ffd84d;
+
+            left: 72px;
+            top: 0;
+        }
+
+        .gift::after {
+            content: "";
+            position: absolute;
+
+            width: 180px;
+            height: 30px;
+
+            background: #ffd84d;
+
+            left: 0;
+            top: 50px;
+        }
+
+        .lid {
+            position: absolute;
+
+            width: 200px;
+            height: 35px;
+
+            background: #ff65b5;
+
+            left: -10px;
+            top: -20px;
+
+            border-radius: 8px;
+
+            z-index: 5;
+        }
+
+        .bow {
+            position: absolute;
+
+            top: -45px;
+            left: 62px;
+
+            font-size: 55px;
+
+            z-index: 10;
+        }
+
+        @keyframes floating {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .open-button {
+            background:
+                linear-gradient(135deg,#ff3cac,#784cff);
+
+            color: white;
+
+            border: none;
+
+            padding: 16px 30px;
+
+            border-radius: 50px;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0 30px rgba(255,60,190,.6);
+
+            transition: .3s;
+
+            animation: pulse 2s infinite;
+        }
+
+        .open-button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            50% {
+                box-shadow:
+                    0 0 50px rgba(255,60,190,.9);
+            }
+        }
+
+        /* =========================
+           BIRTHDAY PAGE
+        ========================= */
+
+        #birthday {
+            display: none;
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(circle at top,#ff72bb,transparent 30%),
+                linear-gradient(135deg,#18001f,#52003e,#18001f);
+
+            color: white;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .birthday-title {
+            font-family: cursive;
+
+            font-size:
+                clamp(45px,8vw,100px);
+
+            color: #fff;
+
+            text-shadow:
+                0 0 20px #ff69b4,
+                0 0 50px #ff1493;
+
+            animation:
+                titleAnimation 1.5s ease;
+        }
+
+        .birthday-name {
+            display: block;
+
+            color: #ffd1eb;
+        }
+
+        @keyframes titleAnimation {
+            from {
+                opacity: 0;
+                transform: scale(.4);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .message {
+            max-width: 800px;
+
+            margin: 40px auto;
+
+            padding: 30px;
+
+            background:
+                rgba(255,255,255,.1);
+
+            border:
+                1px solid
+                rgba(255,255,255,.2);
+
+            backdrop-filter: blur(10px);
+
+            border-radius: 25px;
+
+            font-size: 18px;
+
+            line-height: 2;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,.3);
+        }
+
+        /* =========================
+           CAKE
+        ========================= */
+
+        .cake {
+            font-size: 120px;
+
+            margin: 30px;
+
+            animation:
+                cakeAnimation 2s infinite ease-in-out;
+        }
+
+        @keyframes cakeAnimation {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* =========================
+           GIF / EMOJI CARDS
+        ========================= */
+
+        .cards {
+            max-width: 1000px;
+
+            margin: 50px auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 20px;
+        }
+
+        .card {
+            background:
+                rgba(255,255,255,.1);
+
+            border:
+                1px solid
+                rgba(255,255,255,.2);
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform:
+                translateY(-10px)
+                scale(1.03);
+
+            background:
+                rgba(255,255,255,.15);
+        }
+
+        .emoji {
+            font-size: 70px;
+        }
+
+        /* =========================
+           MUSIC BUTTON
+        ========================= */
+
+        .music-button {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff4da6,
+                    #7c4dff
+                );
+
+            color: white;
+
+            border: none;
+
+            padding: 15px 30px;
+
+            border-radius: 50px;
+
+            font-size: 17px;
+
+            cursor: pointer;
+
+            margin: 20px;
+
+            box-shadow:
+                0 0 30px
+                rgba(255,60,190,.5);
+        }
+
+        /* =========================
+           BALLOONS
+        ========================= */
+
+        .balloon {
+            position: fixed;
+
+            bottom: -100px;
+
+            font-size: 50px;
+
+            z-index: 5;
+
+            animation:
+                balloonUp
+                8s linear forwards;
+
+            pointer-events: none;
+        }
+
+        @keyframes balloonUp {
+
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0);
+            }
+
+            100% {
+                transform:
+                    translateY(-120vh)
+                    rotate(20deg);
+            }
+
+        }
+
+        /* =========================
+           CONFETTI
+        ========================= */
+
+        .confetti {
+            position: fixed;
+
+            top: -20px;
+
+            width: 10px;
+            height: 15px;
+
+            z-index: 100;
+
+            animation:
+                fall 4s linear forwards;
+        }
+
+        @keyframes fall {
+
+            to {
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width:700px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .gift {
+                transform: scale(.85);
+            }
+
+            .message {
+                font-size: 15px;
+            }
+
+            .cake {
+                font-size: 80px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================================
+         PAGE 1
+    ==================================== -->
+
+    <section id="home">
+
+        <div class="home-content">
+
+            <p class="text-pink-200 text-lg">
+                ✨ A Special Surprise For You ✨
+            </p>
+
+            <h1 class="text-4xl md:text-6xl font-bold mt-4">
+                Someone Special Has A
+                <span class="text-pink-300">
+                    Surprise 🎁
+                </span>
+            </h1>
+
+            <!-- Gift -->
+
+            <div
+                class="gift"
+                id="gift"
+            >
+
+                <div class="lid"></div>
+
+                <div class="bow">
+                    🎀
+                </div>
+
+            </div>
+
+
+            <button
+                id="openGift"
+                class="open-button"
+            >
+                🎁 Open My Gift
+            </button>
+
+            <p class="mt-5 text-pink-200">
+                Click to reveal your birthday surprise 💕
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================
+         PAGE 2
+    ==================================== -->
+
+    <section id="birthday">
+
+        <div class="text-5xl mb-5">
+            🎈 🌸 ✨ 🎈 🌸
+        </div>
+
+
+        <h1 class="birthday-title">
+
+            🎉 Happy Birthday 🎉
+
+            <span class="birthday-name">
+                Manisha (Bittu) 💖
+            </span>
+
+        </h1>
+
+
+        <div class="text-4xl mt-5">
+            🎂 🥳 🎁 💕 ✨
+        </div>
+
+
+        <!-- Message -->
+
+        <div class="message">
+
+            <h2 class="text-3xl font-bold text-pink-200 mb-5">
+                💌 A Special Message For You
+            </h2>
+
+            <p id="messageText"></p>
+
+        </div>
+
+
+        <!-- Cake -->
+
+        <div class="cake">
+            🎂
+        </div>
+
+        <h2 class="text-3xl font-bold text-pink-200">
+            Make A Wish! ✨
+        </h2>
+
+
+        <!-- Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="emoji">
+                    🎉
+                </div>
+
+                <h2 class="text-2xl font-bold mt-3">
+                    Birthday Celebration
+                </h2>
+
+                <p class="mt-3 text-pink-100">
+                    Today is your special day!
+                    Enjoy every beautiful moment.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="emoji">
+                    🌸
+                </div>
+
+                <h2 class="text-2xl font-bold mt-3">
+                    Beautiful Wishes
+                </h2>
+
+                <p class="mt-3 text-pink-100">
+                    May your life always be filled
+                    with happiness and beautiful memories.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="emoji">
+                    💖
+                </div>
+
+                <h2 class="text-2xl font-bold mt-3">
+                    Keep Smiling
+                </h2>
+
+                <p class="mt-3 text-pink-100">
+                    Keep smiling, keep shining,
+                    and keep being amazing!
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Birthday GIF-like celebration -->
+
+        <div class="mt-10">
+
+            <h2 class="text-4xl font-bold text-pink-200">
+                🎊 Birthday Celebration 🎊
+            </h2>
+
+            <div class="text-7xl md:text-9xl mt-8">
+                🎉 🥳 🎂 🎈 💃 🎁 🎊
+            </div>
+
+        </div>
+
+
+        <!-- Music -->
+
+        <div class="mt-12">
+
+            <p
+                id="musicStatus"
+                class="text-pink-200"
+            >
+                🎵 Birthday Music Ready
+            </p>
+
+            <button
+                id="musicButton"
+                class="music-button"
+            >
+                🎵 Play Birthday Music
+            </button>
+
+        </div>
+
+
+        <!-- Final -->
+
+        <div class="mt-20 pb-20">
+
+            <div class="text-6xl">
+                💕
+            </div>
+
+            <h2 class="text-4xl font-bold mt-5">
+                Once Again...
+            </h2>
+
+            <h1 class="text-5xl md:text-7xl font-bold text-pink-300 mt-5">
+                🎉 HAPPY BIRTHDAY 🎉
+            </h1>
+
+            <h2 class="text-4xl mt-5">
+                Manisha (Bittu) 💖
+            </h2>
+
+            <p class="mt-5 text-pink-200 text-lg">
+                May all your dreams come true! ✨
+            </p>
+
+            <div class="text-4xl mt-8">
+                🎂 🎈 🌸 💕 🎁 🥳 ✨ 🌹
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        /* =================================
+           ELEMENTS
+        ================================= */
+
+        const home =
+            document.getElementById("home");
+
+        const birthday =
+            document.getElementById("birthday");
+
+        const openGift =
+            document.getElementById("openGift");
+
+        const messageText =
+            document.getElementById("messageText");
+
+        const musicButton =
+            document.getElementById("musicButton");
+
+        const musicStatus =
+            document.getElementById("musicStatus");
+
+
+        /* =================================
+           BIRTHDAY MESSAGE
+        ================================= */
+
+        const message = `
+Happy Birthday, Manisha (Bittu)! 🎂💖
+
+Wishing you a day filled with happiness,
+laughter, love, beautiful memories,
+and lots of wonderful surprises. ✨
+
+May your smile always shine bright
+and may every dream of yours come true. 🌸
+
+Have the most amazing birthday ever! 🎉🎈💝
+        `;
+
+
+        /* =================================
+           OPEN GIFT
+        ================================= */
+
+        openGift.addEventListener(
+            "click",
+            function() {
+
+                /*
+                 * Start music here.
+                 * This click is a user interaction,
+                 * so the browser allows Web Audio.
+                 */
+
+                startMusic();
+
+
+                /*
+                 * Confetti
+                 */
+
+                createConfetti(150);
+
+
+                /*
+                 * Balloons
+                 */
+
+                createBalloons();
+
+
+                /*
+                 * Hide first page
+                 */
+
+                home.style.transition =
+                    "opacity 1s ease";
+
+                home.style.opacity = "0";
+
+
+                setTimeout(
+                    function() {
+
+                        home.style.display =
+                            "none";
+
+                        birthday.style.display =
+                            "block";
+
+                        window.scrollTo(
+                            0,
+                            0
+                        );
+
+                        typeMessage();
+
+                        createConfetti(100);
+
+                    },
+                    1000
+                );
+
+            }
+        );
+
+
+        /* =================================
+           TYPING EFFECT
+        ================================= */
+
+        function typeMessage() {
+
+            let index = 0;
+
+            messageText.innerHTML = "";
+
+            function type() {
+
+                if (
+                    index <
+                    message.length
+                ) {
+
+                    messageText.innerHTML +=
+                        message[index]
+                            .replace(
+                                "\n",
+                                "<br>"
+                            );
+
+                    index++;
+
+                    setTimeout(
+                        type,
+                        25
+                    );
+
+                }
+
+            }
+
+            type();
+        }
+
+
+        /* =================================
+           CONFETTI
+        ================================= */
+
+        function createConfetti(
+            amount
+        ) {
+
+            const colors = [
+                "#ff4da6",
+                "#ffd700",
+                "#7c4dff",
+                "#00e5ff",
+                "#ffffff",
+                "#ff7043"
+            ];
+
+
+            for (
+                let i = 0;
+                i < amount;
+                i++
+            ) {
+
+                const piece =
+                    document.createElement(
+                        "div"
+                    );
+
+                piece.className =
+                    "confetti";
+
+
+                piece.style.left =
+                    Math.random() * 100 +
+                    "vw";
+
+
+                piece.style.background =
+                    colors[
+                        Math.floor(
+                            Math.random() *
+                            colors.length
+                        )
+                    ];
+
+
+                piece.style.animationDuration =
+                    Math.random() * 3 + 2 +
+                    "s";
+
+
+                piece.style.animationDelay =
+                    Math.random() * 1 +
+                    "s";
+
+
+                piece.style.transform =
+                    "rotate(" +
+                    Math.random() * 360 +
+                    "deg)";
+
+
+                document.body.appendChild(
+                    piece
+                );
+
+
+                setTimeout(
+                    function() {
+
+                        piece.remove();
+
+                    },
+                    6000
+                );
+
+            }
+
+        }
+
+
+        /* =================================
+           BALLOONS
+        ================================= */
+
+        function createBalloons() {
+
+            const balloons = [
+                "🎈",
+                "🎈",
+                "🎈",
+                "🎈",
+                "🎈",
+                "🎈",
+                "🎈",
+                "🎈",
+                "🎈",
+                "🎈"
+            ];
+
+
+            balloons.forEach(
+                function(balloonEmoji) {
+
+                    const balloon =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    balloon.className =
+                        "balloon";
+
+
+                    balloon.innerHTML =
+                        balloonEmoji;
+
+
+                    balloon.style.left =
+                        Math.random() * 100 +
+                        "vw";
+
+
+                    balloon.style.animationDuration =
+                        Math.random() * 5 + 6 +
+                        "s";
+
+
+                    balloon.style.animationDelay =
+                        Math.random() * 4 +
+                        "s";
+
+
+                    document.body.appendChild(
+                        balloon
+                    );
+
+
+                    setTimeout(
+                        function() {
+
+                            balloon.remove();
+
+                        },
+                        13000
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =================================
+           BIRTHDAY MUSIC
+           
+           No MP3 file required.
+           Music is generated using
+           Web Audio API.
+        ================================= */
+
+        let audioContext = null;
+
+        let musicTimer = null;
+
+        let musicPlaying = false;
+
+
+        /*
+         * Simple birthday melody
+         */
+
+        const melody = [
+            261.63,
+            261.63,
+            293.66,
+            261.63,
+            349.23,
+            329.63,
+
+            261.63,
+            261.63,
+            293.66,
+            261.63,
+            392.00,
+            349.23,
+
+            261.63,
+            261.63,
+            523.25,
+            440.00,
+            349.23,
+            329.63,
+            293.66,
+
+            466.16,
+            466.16,
+            440.00,
+            349.23,
+            392.00,
+            349.23
+        ];
+
+
+        let noteIndex = 0;
+
+
+        function startMusic() {
+
+            try {
+
+                /*
+                 * Create audio context
+                 */
+
+                if (!audioContext) {
+
+                    audioContext =
+                        new (
+                            window.AudioContext ||
+                            window.webkitAudioContext
+                        )();
+
+                }
+
+
+                /*
+                 * Resume audio
+                 */
+
+                if (
+                    audioContext.state ===
+                    "suspended"
+                ) {
+
+                    audioContext.resume();
+
+                }
+
+
+                if (musicPlaying) {
+
+                    return;
+
+                }
+
+
+                musicPlaying = true;
+
+                musicStatus.innerText =
+                    "🎵 Birthday Music Playing 💕";
+
+                musicButton.innerText =
+                    "⏸️ Pause Music";
+
+
+                playNextNote();
+
+
+            } catch(error) {
+
+                console.error(
+                    "Audio error:",
+                    error
+                );
+
+                musicStatus.innerText =
+                    "⚠️ Your browser does not support music.";
+
+            }
+
+        }
+
+
+        function playNextNote() {
+
+            if (!musicPlaying) {
+                return;
+            }
+
+
+            const frequency =
+                melody[noteIndex];
+
+
+            const oscillator =
+                audioContext.createOscillator();
+
+
+            const gain =
+                audioContext.createGain();
+
+
+            oscillator.type =
+                "sine";
+
+
+            oscillator.frequency.value =
+                frequency;
+
+
+            gain.gain.setValueAtTime(
+                0.0001,
+                audioContext.currentTime
+            );
+
+
+            gain.gain.exponentialRampToValueAtTime(
+                0.18,
+                audioContext.currentTime + 0.03
+            );
+
+
+            gain.gain.exponentialRampToValueAtTime(
+                0.0001,
+                audioContext.currentTime + 0.45
+            );
+
+
+            oscillator.connect(gain);
+
+            gain.connect(
+                audioContext.destination
+            );
+
+
+            oscillator.start();
+
+            oscillator.stop(
+                audioContext.currentTime + 0.5
+            );
+
+
+            noteIndex++;
+
+            if (
+                noteIndex >=
+                melody.length
+            ) {
+
+                noteIndex = 0;
+
+            }
+
+
+            musicTimer =
+                setTimeout(
+                    playNextNote,
+                    500
+                );
+
+        }
+
+
+        /* =================================
+           MUSIC BUTTON
+        ================================= */
+
+        musicButton.addEventListener(
+            "click",
+            function() {
+
+                if (
+                    musicPlaying
+                ) {
+
+                    stopMusic();
+
+                } else {
+
+                    startMusic();
+
+                }
+
+            }
+        );
+
+
+        function stopMusic() {
+
+            musicPlaying = false;
+
+            clearTimeout(
+                musicTimer
+            );
+
+
+            musicStatus.innerText =
+                "🎵 Birthday Music Paused";
+
+            musicButton.innerText =
+                "🎵 Play Birthday Music";
+
+        }
+
+    </script>
+
+</body>
+</html>
